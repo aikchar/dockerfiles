@@ -1,9 +1,9 @@
 FROM opensuse/leap:15
 
-COPY *.rpm /tmp/
+COPY bellsoft.repo /etc/yum.repos.d/
 
 RUN    zypper refresh \
-    && zypper install -y --gpg-auto-import-keys /tmp/*.rpm
+    && zypper install -y --enablerepo=BellSoft -y bellsoft-java11
 
 ENV PATH="/usr/lib/jvm/bellsoft-java11-runtime.aarch64/bin:${PATH}"
 

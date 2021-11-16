@@ -1,7 +1,7 @@
-DOCKER_CMD := $(shell /usr/bin/command -v docker 2> /dev/null)
+DOCKER_CMD := $(shell command -v docker 2> /dev/null)
 NOW := $(shell date -u +%Y%m%d%H%M%S)
-PODMAN_CMD := $(shell /usr/bin/command -v podman 2> /dev/null)
-VCTL_CMD := $(shell /usr/bin/command -v vctl 2> /dev/null)
+PODMAN_CMD := $(shell command -v podman 2> /dev/null)
+VCTL_CMD := $(shell command -v vctl 2> /dev/null)
 
 ifdef VCTL_CMD
 PROGRAM=$(VCTL_CMD)
