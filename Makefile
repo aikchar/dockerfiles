@@ -27,6 +27,10 @@ help:
 build-dotnet-opensuse:
 	cd opensuse/dotnet && $(PROGRAM) build -t localhost/dotnet/opensuse-leap-15.3:$(NOW) .
 
+.PHONY: build-dotnet-oracle-linux
+build-dotnet-oracle-linux:
+	cd oracle-linux/dotnet && $(PROGRAM) build -t localhost/dotnet/oracle-linux-8.4:$(NOW) .
+
 .PHONY: build-dotnet-photon
 build-dotnet-photon:
 	cd photon/dotnet && $(PROGRAM) build -t localhost/dotnet/photon-4.0:$(NOW) .
@@ -34,6 +38,10 @@ build-dotnet-photon:
 .PHONY: build-java-opensuse
 build-java-opensuse:
 	cd opensuse/java && $(PROGRAM) build -t localhost/java/opensuse-leap-15.3:$(NOW) .
+
+.PHONY: build-java-oracle-linux
+build-java-oracle-linux:
+	cd oracle-linux/java && $(PROGRAM) build -t localhost/java/oracle-linux-8.4:$(NOW) .
 
 .PHONY: build-java-photon
 build-java-photon:
