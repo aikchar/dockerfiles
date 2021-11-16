@@ -3,7 +3,7 @@ FROM oraclelinux:8.4
 # Since .NET 6 is not supported on CentOS 8, we have to use manual install
 # We are also forced to use manual install on aarch64
 RUN    dnf makecache \
-    && dnf install -y coreutils gawk libicu krb5-libs libstdc++-devel openssl-libs tar zlib \
+    && dnf install -y coreutils gawk krb5-libs libicu libstdc++-devel openssl-libs tar zlib \
     && curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel Current --runtime aspnetcore --install-dir /usr/local/dotnet \
     && ln -s /usr/local/dotnet/dotnet /usr/local/bin/dotnet
 
