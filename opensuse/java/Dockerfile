@@ -1,6 +1,6 @@
 FROM opensuse/leap:15
 
-COPY bellsoft.repo /etc/yum.repos.d/
+COPY bellsoft.repo /etc/zypp/repos.d/
 
 RUN    zypper refresh \
     && zypper install -y --enablerepo=BellSoft -y bellsoft-java11
