@@ -8,3 +8,5 @@ RUN    zypper --gpg-auto-import-keys refresh --repo BellSoft \
     && update-alternatives --set java "/usr/lib/jvm/bellsoft-java11-runtime-full.$(uname -m)/bin/java"
 
 # https://bell-sw.com/pages/downloads/#/java-11-lts
+
+# Also installs jaotc but not javac
