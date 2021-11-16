@@ -4,7 +4,7 @@ COPY bellsoft.repo /etc/zypp/repos.d/
 
 RUN    zypper --gpg-auto-import-keys refresh --repo BellSoft \
     && zypper refresh \
-    && zypper install -y bellsoft-java11 \
+    && zypper install -y bellsoft-java11-runtime-full \
     && update-alternatives --set java "/usr/lib/jvm/bellsoft-java11.$(uname -m)/bin/java" \
     && update-alternatives --set javac "/usr/lib/jvm/bellsoft-java11.$(uname -m)/bin/javac"
 
