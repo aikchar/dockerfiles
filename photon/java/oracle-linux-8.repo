@@ -1,0 +1,7 @@
+[ol8]
+name=Oracle Linux 8 ($basearch)
+baseurl=https://yum.oracle.com/repo/OracleLinux/OL8/appstream/$basearch
+gpgkey=https://yum.oracle.com/RPM-GPG-KEY-oracle-ol8
+gpgcheck=1
+enabled=0
+skip_if_unavailable=True
