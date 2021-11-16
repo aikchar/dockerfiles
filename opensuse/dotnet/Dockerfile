@@ -1,4 +1,4 @@
-FROM opensuse/leap:15
+FROM opensuse/leap:15.3
 
 RUN    zypper refresh \
     && zypper install -y curl gzip libicu tar \
