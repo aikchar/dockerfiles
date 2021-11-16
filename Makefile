@@ -23,6 +23,10 @@ help:
 	@echo Targets:
 	@grep '^[0-9A-Za-z-]*:$$' Makefile | grep -v grep | sed -e 's/:$$//g' -e 's/^/\t/g'
 
+.PHONY: build-dotnet-amazon-linux
+build-dotnet-amazon-linux:
+	cd amazon-linux/dotnet && $(PROGRAM) build -t localhost/dotnet/amazon-linux-2:$(NOW) .
+
 .PHONY: build-dotnet-opensuse
 build-dotnet-opensuse:
 	cd opensuse/dotnet && $(PROGRAM) build -t localhost/dotnet/opensuse-leap-15.3:$(NOW) .
@@ -34,6 +38,10 @@ build-dotnet-oracle-linux:
 .PHONY: build-dotnet-photon
 build-dotnet-photon:
 	cd photon/dotnet && $(PROGRAM) build -t localhost/dotnet/photon-4.0:$(NOW) .
+
+.PHONY: build-java-amazon-linux
+build-java-amazon-linux:
+	cd amazon-linux/java && $(PROGRAM) build -t localhost/java/amazon-linux-2:$(NOW) .
 
 .PHONY: build-java-opensuse
 build-java-opensuse:
