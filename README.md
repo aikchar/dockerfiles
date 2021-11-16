@@ -3,7 +3,7 @@
 This repo contains Dockerfiles for various combinations.
 
 Most of these are built and tested on Raspberry Pi 3 (aarch64 / arm64 / armv8)
-on top of an openSUSE 15 host with Podman.
+on top of an openSUSE Leap 15.3 host with Podman.
 
 A Makefile is also included to help understand this repo better. You can also
 use it to build images quickly. Supports: vctl, podman, and docker.
