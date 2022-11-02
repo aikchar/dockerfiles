@@ -32,15 +32,15 @@ sync-remote-docker-host:
 
 .PHONY: build-dotnet-amazon-linux
 build-dotnet-amazon-linux:
-	cd amazon-linux/dotnet && $(PROGRAM) build -t localhost/dotnet/amazon-linux-2:$(NOW) .
+	cd amazon-linux/dotnet && $(PROGRAM) build -t localhost/dotnet/amazon-linux-2022:$(NOW) .
 
 .PHONY: build-dotnet-opensuse
 build-dotnet-opensuse:
-	cd opensuse/dotnet && $(PROGRAM) build -t localhost/dotnet/opensuse-leap-15.3:$(NOW) .
+	cd opensuse/dotnet && $(PROGRAM) build -t localhost/dotnet/opensuse-leap-15.4:$(NOW) .
 
 .PHONY: build-dotnet-oracle-linux
 build-dotnet-oracle-linux:
-	cd oracle-linux/dotnet && $(PROGRAM) build -t localhost/dotnet/oracle-linux-8.4:$(NOW) .
+	cd oracle-linux/dotnet && $(PROGRAM) build -t localhost/dotnet/oracle-linux-9:$(NOW) .
 
 .PHONY: build-dotnet-photon
 build-dotnet-photon:
@@ -48,19 +48,19 @@ build-dotnet-photon:
 
 .PHONY: build-dotnet-rhel-ubi
 build-dotnet-rhel-ubi:
-	cd rhel-ubi/dotnet && $(PROGRAM) build -t localhost/dotnet/rhel-ubi-8.5:$(NOW) .
+	cd rhel-ubi/dotnet && $(PROGRAM) build -t localhost/dotnet/rhel-ubi-9:$(NOW) .
 
 .PHONY: build-java-amazon-linux
 build-java-amazon-linux:
-	cd amazon-linux/java && $(PROGRAM) build -t localhost/java/amazon-linux-2:$(NOW) .
+	cd amazon-linux/java && $(PROGRAM) build -t localhost/java/amazon-linux-2022:$(NOW) .
 
 .PHONY: build-java-opensuse
 build-java-opensuse:
-	cd opensuse/java && $(PROGRAM) build -t localhost/java/opensuse-leap-15.3:$(NOW) .
+	cd opensuse/java && $(PROGRAM) build -t localhost/java/opensuse-leap-15.4:$(NOW) .
 
 .PHONY: build-java-oracle-linux
 build-java-oracle-linux:
-	cd oracle-linux/java && $(PROGRAM) build -t localhost/java/oracle-linux-8.4:$(NOW) .
+	cd oracle-linux/java && $(PROGRAM) build -t localhost/java/oracle-linux-9:$(NOW) .
 
 .PHONY: build-java-photon
 build-java-photon:
@@ -68,4 +68,4 @@ build-java-photon:
 
 .PHONY: build-java-rhel-ubi
 build-java-rhel-ubi:
-	cd rhel-ubi/java && $(PROGRAM) build -t localhost/java/rhel-ubi-8.5:$(NOW) .
+	cd rhel-ubi/java && $(PROGRAM) build -t localhost/java/rhel-ubi-9:$(NOW) .

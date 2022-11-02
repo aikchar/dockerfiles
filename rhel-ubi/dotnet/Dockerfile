@@ -1,4 +1,4 @@
-FROM redhat/ubi8:8.5
+FROM registry.access.redhat.com/ubi9/ubi
 
 RUN    dnf makecache \
     && dnf install -y dotnet-runtime-6.0 \
