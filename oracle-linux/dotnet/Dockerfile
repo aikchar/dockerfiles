@@ -1,18 +1,6 @@
-FROM oraclelinux:8.4
+FROM container-registry.oracle.com/os/oraclelinux:9
 
-# Since .NET 6 is not supported on CentOS 8, we have to use manual install
-# We are also forced to use manual install on aarch64
 RUN    dnf makecache \
-    && dnf install -y coreutils gawk krb5-libs libicu libstdc++-devel openssl-libs tar zlib \
-    && curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel Current --runtime aspnetcore --install-dir /usr/local/dotnet \
-    && ln -s /usr/local/dotnet/dotnet /usr/local/bin/dotnet
+    && dnf install -y aspnetcore-runtime-6.0
 
-# Use on x86_64
-# RUN    rpmkeys --import 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF' \
-#     && curl -o /etc/yum.repos.d/mono-centos8-stable.repo https://download.mono-project.com/repo/centos8-stable.repo \
-#     && dnf makecache \
-#     && dnf install -y libgdiplus
-
-# https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script
-# https://docs.microsoft.com/en-us/dotnet/core/install/linux-scripted-manual
-# https://docs.microsoft.com/en-us/dotnet/core/install/linux-centos
+# https://learn.microsoft.com/en-us/dotnet/core/install/linux-fedora

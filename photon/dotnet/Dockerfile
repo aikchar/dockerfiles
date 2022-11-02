@@ -1,12 +1,13 @@
-FROM photon:4.0
+FROM docker.io/library/photon:4.0
 
-# Use on aarch64
+# Use on aarch64 and x86_64
 RUN    tdnf makecache \
     && tdnf install -y coreutils gawk icu-devel libstdc++-devel \
     && curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel Current --runtime aspnetcore --install-dir /usr/local/dotnet \
     && ln -s /usr/local/dotnet/dotnet /usr/local/bin/dotnet
 
 # Use on x86_64
+# DOES NOT WORK AS OF 2022-11-01
 # RUN    rpm --import https://packages.microsoft.com/keys/microsoft.asc \
 #     && curl -o /etc/yum.repos.d/microsoft-prod.repo https://packages.microsoft.com/config/opensuse/15/prod.repo \
 #     && tdnf makecache \

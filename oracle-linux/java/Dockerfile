@@ -1,8 +1,6 @@
-FROM oraclelinux:8.4
+FROM container-registry.oracle.com/os/oraclelinux:9
 
 RUN    dnf makecache \
-    && dnf install -y java-11-openjdk
+    && dnf install -y java-17-openjdk
 
-# https://access.redhat.com/documentation/en-us/openjdk/11/pdf/using_alt-java/openjdk-11-using_alt-java-en-us.pdf
-
-# To install javac and jaotc install package java-11-openjdk-devel
+# To install javac and jaotc install package java-17-openjdk-devel
