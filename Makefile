@@ -6,17 +6,17 @@ REMOTE_DOCKER_FILESYSTEM_PATH ?= dockerfiles/
 TEST_AFTER_BUILD ?= false
 VCTL_CMD := $(shell command -v vctl 2> /dev/null)
 
-ifdef VCTL_CMD
+ifdef DOCKER_CMD
 MULTIARCH_BUILD=
-PROGRAM=$(VCTL_CMD)
+PROGRAM=$(DOCKER_CMD)
 else
 ifdef PODMAN_CMD
 MULTIARCH_BUILD=--platform linux/amd64 --platform linux/arm64
 PROGRAM=$(PODMAN_CMD)
 else
-ifdef DOCKER_CMD
+ifdef VCTL_CMD
 MULTIARCH_BUILD=
-PROGRAM=$(DOCKER_CMD)
+PROGRAM=$(VCTL_CMD)
 else
 $(error None of docker, podman, vctl installed)
 endif
