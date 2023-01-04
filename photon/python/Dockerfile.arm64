@@ -1,0 +1,17 @@
+FROM docker.io/library/photon:4.0
+
+ENV PATH=$PATH:/opt/miniconda/bin:/opt/miniconda/envs/py10/bin:/opt/miniconda/envs/py9/bin:/opt/miniconda/envs/py8/bin:/opt/miniconda/envs/py7/bin
+
+# https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links
+RUN    curl -o /usr/local/bin/Miniconda3-latest-Linux-aarch64.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-aarch64.sh \
+    && printf '%s /usr/local/bin/Miniconda3-latest-Linux-aarch64.sh' '5f4f865812101fdc747cea5b820806f678bb50fe0a61f19dc8aa369c52c4e513' | tee /usr/local/src/Miniconda3-SHA256SUMS \
+    && sha256sum -c /usr/local/src/Miniconda3-SHA256SUMS \
+    && bash /usr/local/bin/Miniconda3-latest-Linux-aarch64.sh -b -p /opt/miniconda
+
+RUN    conda update --yes -n base -c defaults conda \
+    && conda create --yes --name py10 python=3.10 \
+    && conda create --yes --name py9 python=3.9 \
+    && conda create --yes --name py8 python=3.8 \
+    && conda create --yes --name py7 python=3.7 \
+    && echo '. /opt/miniconda/etc/profile.d/conda.sh' | tee -a /root/.bashrc \
+    && echo 'conda activate py10' | tee -a /root/.bashrc
