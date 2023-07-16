@@ -31,6 +31,7 @@ endif
 
 ifdef DOCKER_CMD
 PROGRAM=$(DOCKER_CMD)
+MULTIARCH_BUILD=--platform linux/amd64 --platform linux/arm64
 endif
 
 ifdef NERDCTL_CMD
@@ -134,3 +135,11 @@ build-python-rhel-ubi-amd64:
 .PHONY: build-python-rhel-ubi-arm64
 build-python-rhel-ubi-arm64:
 	cd rhel-ubi/python && '$(PROGRAM)' build $(ARM64_BUILD) -t localhost/python/rhel-ubi-9-arm64:$(NOW) -f Dockerfile.arm64 .
+
+.PHONY: build-systemd-debian
+build-systemd-debian:
+	cd debian/systemd && '$(PROGRAM)' build $(MULTIARCH_BUILD) -t localhost/systemd/debian-9:$(NOW) -f Dockerfile .
+
+.PHONY: build-systemd-opensuse
+build-systemd-opensuse:
+	cd opensuse/systemd && '$(PROGRAM)' build $(MULTIARCH_BUILD) -t localhost/systemd/opensuse-leap-15.5:$(NOW) -f Dockerfile .
