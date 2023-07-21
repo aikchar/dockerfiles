@@ -22,5 +22,6 @@ use it to build images quickly. Supports: vctl, podman, and docker.
 | Java 17 (JRE)      | Oracle Linux 9                           | Works                | Works                | OpenJDK |
 | Java 17 (JRE)      | Photon 4.0                               | Works                | Works                | Uses BellSoft's distribution because of their partnership with VMware. Also uses Oracle Linux 8 repos for some dependencies which are not available in Photon repos. |
 | Java 17 (JRE)      | Red Hat Enterprise Linux 9 UBI           | Works                | Works                | OpenJDK |
-| systemd            | Debian 12                                | Works                | Works                |  |
-| systemd            | openSUSE Leap 15.5                       | Works                | Works                |  |
+| systemd            | Debian 12                                | Works                | TODO                 |  |
+| systemd            | Fedora 39                                | Works                | TODO                 |  |
+| systemd            | openSUSE Leap 15.5                       | Works                | TODO                 |  |
