@@ -1,7 +1,0 @@
-[ol9]
-name=Oracle Linux 9 ($basearch)
-baseurl=https://yum.oracle.com/repo/OracleLinux/OL9/appstream/$basearch
-gpgkey=https://yum.oracle.com/RPM-GPG-KEY-oracle-ol9
-gpgcheck=1
-enabled=0
-skip_if_unavailable=True
