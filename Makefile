@@ -57,7 +57,11 @@ sync-remote-docker-host:
 
 .PHONY: build-dotnet-amazon-linux
 build-dotnet-amazon-linux:
-	cd amazon-linux/dotnet && '$(PROGRAM)' build $(MULTIARCH_BUILD) -t localhost/dotnet/amazon-linux-2022:$(NOW) .
+	cd amazon-linux/dotnet && '$(PROGRAM)' build $(MULTIARCH_BUILD) -t localhost/dotnet/amazon-linux-2023:$(NOW) .
+
+.PHONY: build-dotnet-debian
+build-dotnet-debian:
+	cd debian/dotnet && '$(PROGRAM)' build $(MULTIARCH_BUILD) -t localhost/dotnet/debian-11:$(NOW) .
 
 .PHONY: build-dotnet-opensuse
 build-dotnet-opensuse:
@@ -69,7 +73,7 @@ build-dotnet-oracle-linux:
 
 .PHONY: build-dotnet-photon
 build-dotnet-photon:
-	cd photon/dotnet && '$(PROGRAM)' build $(MULTIARCH_BUILD) -t localhost/dotnet/photon-4.0:$(NOW) .
+	cd photon/dotnet && '$(PROGRAM)' build $(MULTIARCH_BUILD) -t localhost/dotnet/photon-5.0:$(NOW) .
 
 .PHONY: build-dotnet-rhel-ubi
 build-dotnet-rhel-ubi:
@@ -77,7 +81,7 @@ build-dotnet-rhel-ubi:
 
 .PHONY: build-java-amazon-linux
 build-java-amazon-linux:
-	cd amazon-linux/java && '$(PROGRAM)' build $(MULTIARCH_BUILD) -t localhost/java/amazon-linux-2022:$(NOW) .
+	cd amazon-linux/java && '$(PROGRAM)' build $(MULTIARCH_BUILD) -t localhost/java/amazon-linux-2023:$(NOW) .
 
 .PHONY: build-java-opensuse
 build-java-opensuse:
@@ -89,7 +93,7 @@ build-java-oracle-linux:
 
 .PHONY: build-java-photon
 build-java-photon:
-	cd photon/java && '$(PROGRAM)' build $(MULTIARCH_BUILD) -t localhost/java/photon-4.0:$(NOW) .
+	cd photon/java && '$(PROGRAM)' build $(MULTIARCH_BUILD) -t localhost/java/photon-5.0:$(NOW) .
 
 .PHONY: build-java-rhel-ubi
 build-java-rhel-ubi:
@@ -97,11 +101,11 @@ build-java-rhel-ubi:
 
 .PHONY: build-python-amazon-linux-amd64
 build-python-amazon-linux-amd64:
-	cd amazon-linux/python && '$(PROGRAM)' build $(AMD64_BUILD) -t localhost/python/amazon-linux-2022-amd64:$(NOW) -f Dockerfile.amd64 .
+	cd amazon-linux/python && '$(PROGRAM)' build $(AMD64_BUILD) -t localhost/python/amazon-linux-2023-amd64:$(NOW) -f Dockerfile.amd64 .
 
 .PHONY: build-python-amazon-linux-arm64
 build-python-amazon-linux-arm64:
-	cd amazon-linux/python && '$(PROGRAM)' build $(ARM64_BUILD) -t localhost/python/amazon-linux-2022-arm64:$(NOW) -f Dockerfile.arm64 .
+	cd amazon-linux/python && '$(PROGRAM)' build $(ARM64_BUILD) -t localhost/python/amazon-linux-2023-arm64:$(NOW) -f Dockerfile.arm64 .
 
 .PHONY: build-python-opensuse-amd64
 build-python-opensuse-amd64:
@@ -135,6 +139,10 @@ build-python-rhel-ubi-amd64:
 build-python-rhel-ubi-arm64:
 	cd rhel-ubi/python && '$(PROGRAM)' build $(ARM64_BUILD) -t localhost/python/rhel-ubi-9-arm64:$(NOW) -f Dockerfile.arm64 .
 
+.PHONY: build-systemd-amazon-linux
+build-systemd-amazon-linux:
+	cd amazon-linux/systemd && '$(PROGRAM)' build $(MULTIARCH_BUILD) -t localhost/systemd/amazon-linux-2023:$(NOW) -f Dockerfile .
+
 .PHONY: build-systemd-debian
 build-systemd-debian:
 	cd debian/systemd && '$(PROGRAM)' build $(MULTIARCH_BUILD) -t localhost/systemd/debian-9:$(NOW) -f Dockerfile .
@@ -146,3 +154,11 @@ build-systemd-fedora:
 .PHONY: build-systemd-opensuse
 build-systemd-opensuse:
 	cd opensuse/systemd && '$(PROGRAM)' build $(MULTIARCH_BUILD) -t localhost/systemd/opensuse-leap-15.5:$(NOW) -f Dockerfile .
+
+.PHONY: build-systemd-photon
+build-systemd-photon:
+	cd photon/systemd && '$(PROGRAM)' build $(MULTIARCH_BUILD) -t localhost/systemd/photon-5.0:$(NOW) .
+
+.PHONY: build-systemd-ubuntu
+build-systemd-ubuntu:
+	cd ubuntu/systemd && '$(PROGRAM)' build $(MULTIARCH_BUILD) -t localhost/systemd/ubuntu-2204:$(NOW) -f Dockerfile .
