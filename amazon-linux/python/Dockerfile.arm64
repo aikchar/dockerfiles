@@ -1,4 +1,4 @@
-FROM amazonlinux:2022
+FROM amazonlinux:2023
 
 ENV PATH=$PATH:/opt/miniconda/bin:/opt/miniconda/envs/py10/bin:/opt/miniconda/envs/py9/bin:/opt/miniconda/envs/py8/bin:/opt/miniconda/envs/py7/bin
 

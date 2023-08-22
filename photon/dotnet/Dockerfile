@@ -1,4 +1,4 @@
-FROM docker.io/library/photon:4.0
+FROM docker.io/library/photon:5.0
 
 # Use on aarch64 and x86_64
 RUN    tdnf makecache \

@@ -1,4 +1,4 @@
-FROM amazonlinux:2022
+FROM amazonlinux:2023
 
 RUN    dnf makecache \
     && dnf install -y aspnetcore-runtime-6.0

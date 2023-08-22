@@ -1,4 +1,4 @@
-FROM amazonlinux:2022
+FROM amazonlinux:2023
 
 RUN    dnf makecache \
     && dnf install -y java-17-amazon-corretto-headless
